@@ -1,0 +1,16 @@
+# 워크 플로우의 이름 지정
+name: Main_Workflows
+
+# 워크 플로우의 특징 정의
+on:
+  push:
+    branches:
+      - main
+
+#job
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print hello
+        run: echo "test"
