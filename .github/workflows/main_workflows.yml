@@ -5,11 +5,17 @@ name: Main_Workflows
 
 # main 에 push 했을 때 발생, develop에 pr했을 때 발생
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches: [main, feature/test]
+#  push:
+#    branches:
+#      - main
+#  pull_request:
+#    branches: [main, feature/test]
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: '배포 환경'
+        required: true
+        default: 'staging'
 
 #job
 jobs:
